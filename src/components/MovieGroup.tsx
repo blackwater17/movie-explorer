@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import BASE_URL from '../config/config';
+import { Link } from 'react-router-dom';
 
 const MovieGroup = () => {
     
@@ -35,9 +37,9 @@ const MovieGroup = () => {
         <div className='movielist-group'>
             {movies.length > 0 && movies.map((movie, i) => (
                 movie ? ( 
-                <a href={"#/movie/"+movie.id} key={i} className='movie-box' style={{backgroundImage: "url(https://www.themoviedb.org/t/p/w342" + movie.poster_path + ")" }}></a>
+                    <Link to={"/movie/"+movie.id} key={i} className='movie-box' style={{ backgroundImage:  "url(https://www.themoviedb.org/t/p/w342" + movie.poster_path + ")" }} />
                 ) : (
-                    <a key={i} className='movie-box'></a>
+                    <Link to="" key={i} className='movie-box' />
                 )  
             ))}
         </div>

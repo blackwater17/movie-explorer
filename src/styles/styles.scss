@@ -7,16 +7,16 @@
 @import './components/actorPanels';
 @import './components/actorFilterMovies';
 @import './components/movieSearch';
+@import './components/login';
 @import './components/notFound';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
 
 body {
     background-color: #1e242b;
-    padding: 0;
+    padding: 0 0 64px;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    // min-height: 1000px;
 }
 
 .page-container {

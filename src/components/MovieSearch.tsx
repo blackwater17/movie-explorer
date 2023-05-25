@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import BASE_URL from '../config/config';
+import { Link } from 'react-router-dom';
 
 type MovieProps = {
   vote_average: number,
@@ -37,12 +39,12 @@ const MovieSearch = () => {
         <div className="search-results" >
             {searchResults.map((movie:MovieProps, i) => {
               return (
-                <a className='search-result-container' key={i} href={"/movie/"+movie.id}>
+                <Link className='search-result-container' key={i} to={"/movie/"+movie.id}>
                   <div className='result-texts-container'>
                     <div className='result-name'>{movie.title}</div>
                       <div className='result-type'>({movie.release_date != undefined && movie.release_date.slice(0, 4)})</div>
                     </div>
-                </a>  
+                </Link>  
                 )
             })
             }

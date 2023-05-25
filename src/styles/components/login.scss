@@ -1,0 +1,40 @@
+.login-page-container {
+    padding: 20px 50px 50px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #def;
+        label {
+            font-size: 15px;
+            width: 85px;
+            display: inline-block;
+        }
+        input {
+            width: 240px;
+            outline: none;
+            border-radius: 5px;
+            padding: 7px 10px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+            button.submit {
+                text-align: center;
+                padding: 6px 21px;
+                font-size: 12px;
+            }
+        }
+    }
+ 
+}
+

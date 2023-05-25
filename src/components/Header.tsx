@@ -1,18 +1,19 @@
 import React from 'react';
+import BASE_URL from '../config/config';
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
     <header>
-
         <div className='header-logo'>
-          <img src="/img/header-logo.png" alt="header-logo"></img>
+          <img src={process.env.PUBLIC_URL + '/img/header-logo.png'} alt="header-logo"></img>
         </div>
-
         <ul>
-          <li><a href="#/">HOME</a></li>
-          <li><a href="#/movies">MOVIES</a></li>
-          <li><a href="#/actors">ACTORS</a></li>
-          <li><a href="#/lists">LISTS</a></li>
+          <li><Link to={"/"}>HOME</Link></li>
+          <li><Link to={"/movies"}>MOVIES</Link></li>
+          <li><Link to={"/actors"}>ACTORS</Link></li>
+          <li><Link to={"/lists"}>LISTS</Link></li>
+          <li><Link to={"/login"}>LOGOUT</Link></li>
         </ul>
     </header>
   );

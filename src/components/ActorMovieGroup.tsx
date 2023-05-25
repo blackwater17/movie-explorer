@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import selectMovies from '../selectors/selectMovies';
+import BASE_URL from '../config/config';
+import { Link } from 'react-router-dom';
 
 type ActorMovieGroupProps = {
   movies: []
@@ -28,9 +30,9 @@ const ActorMovieGroup = (movies: ActorMovieGroupProps) => {
   }
 
   const setObserver = () => {
-    return true;
+    return false;
     [...document.querySelectorAll(".movie-box")].filter(d => d.getAttribute("data-rendered") === "false").forEach(m => {
-      const element = m as HTMLElement; // Explicitly cast to HTMLElement
+      const element = m as HTMLElement;
       if (isElementVisible(element)) {
         element.style.backgroundImage = "url(https://www.themoviedb.org/t/p/w342" + element.getAttribute("data-bg") + ")"
         element.setAttribute("data-rendered", "true")
@@ -56,9 +58,9 @@ const ActorMovieGroup = (movies: ActorMovieGroupProps) => {
         <div className='movielist-group'>
             {selectedMovies.length > 0 && selectedMovies.map((movie: {id: string, poster_path: string}, i:number) => (
                 movie ? ( 
-                <a href={"/movie/"+movie.id} key={i} className='movie-box' data-bg={movie.poster_path} data-rendered="false" style={{backgroundImage: "url(https://www.themoviedb.org/t/p/w342" + movie.poster_path + ")" }}></a>
+                  <Link to={"/movie/"+movie.id} key={i} className='movie-box' data-bg={movie.poster_path} data-rendered="false" style={{backgroundImage: "url(https://www.themoviedb.org/t/p/w342" + movie.poster_path + ")" }}  />
                 ) : (
-                    <a key={i} className='movie-box'></a>
+                    <Link key={i} to="" className="movie-box"></Link>
                 )  
             ))}
         </div>

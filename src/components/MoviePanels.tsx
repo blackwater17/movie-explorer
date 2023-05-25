@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import BASE_URL from '../config/config';
+import { Link } from 'react-router-dom';
 
 type MovieProps = {
     vote_average: number,
@@ -64,7 +66,7 @@ function MoviePanels({ movie, movieCast, movieGenres }: { movie: MovieProps | nu
                     {director && (
                         <>
                         <div className='directed-by'>Directed by</div>
-                        <a href={"/actor/"+director.id}>{director.name}</a>
+                        <Link to={"/actor/"+director.id}>{director.name}</Link>
                         </>
                     )}      
                 </div>
@@ -80,7 +82,9 @@ function MoviePanels({ movie, movieCast, movieGenres }: { movie: MovieProps | nu
                 {selectedContent === "cast" && 
                     <div className='cast-content-container'>
                         {movieCast && movieCast.cast !=undefined && movieCast.cast.map(e => {
-                            return (<a className='tag' href={"/actor/" + e.id}>{e.name}</a>)
+                            return (
+                                <Link to={"/actor/" + e.id} className='tag' >{e.name}</Link>
+                            )
                         })}
                     </div>
                 }
@@ -93,7 +97,7 @@ function MoviePanels({ movie, movieCast, movieGenres }: { movie: MovieProps | nu
                                     <div className='crew-role'>{e.department}</div> 
                                     <div className='crew--center'> </div>
                                 </div>
-                                <a className='tag' href={"/actor/" + e.id}>{e.name}</a>
+                                <Link className='tag' to={"/actor/" + e.id}>{e.name}</Link>
                             </div>
                             )
                         })}
