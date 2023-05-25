@@ -1,0 +1,56 @@
+.actor-panels {
+    max-width: 1440px;
+    width: 76%;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    padding: 40px 0;
+    column-gap: 48px;
+
+    .actor-panel {
+        min-height: 500px;
+    }
+    .actor-panel-1 {
+        width: 73%;
+        // border: 1px solid rgb(44, 44, 44);
+        .panel-header {
+            width: 100%;
+            margin-bottom: 21px;
+            padding-left: 2px;
+            .panel-header-title {
+                color: #9ab;
+                font-weight: 300;
+                letter-spacing: 1px;
+                font-size: 13px;
+                margin-bottom: 3px;
+            }
+            .panel-actor-name {
+                color: #fff;
+                font-size: 22px;
+                margin-left: -1px;
+            }
+        }
+    }
+    .actor-panel-2 {
+        width: 27%;
+        box-sizing: border-box;
+        .actor-img {
+            width: 100%;
+        }
+        .actor-biography {
+            padding: 5px 0;
+            color: aliceblue;
+            font-size: 14px;
+            line-height: 1.4;
+            font-weight: 300;
+            font-family: Arial, Helvetica, sans-serif;
+            .load-more {
+                color: #def;
+                cursor: pointer;
+            }
+            .load-more:hover {
+                color: #40bcf4;
+            }
+        }
+    }
+}

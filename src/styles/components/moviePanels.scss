@@ -1,0 +1,210 @@
+.movie-panels {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    margin-top: 242px; /*270*/
+
+    .movie-panel {
+        min-height: 500px;
+    }
+
+    .movie-panel-1 {
+        width: 23%;
+        
+        .movie-poster {
+            aspect-ratio: 0.666;
+            background-size: cover;
+            background-position: center;
+            box-shadow: inset 0 0 1px #def;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .movie-stats {
+            height: 16px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            justify-content: space-around;
+            margin: 5px auto 0;
+            flex-wrap: wrap;
+            row-gap: 12px;
+            .movie-stat {
+                height: 100%;
+                font-size: 12px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                color: #9ab;   
+                cursor: default;   
+                column-gap: 3px;
+                span {
+                    color: #def;
+                }
+            }
+        }
+    }
+    .movie-panel-2 {
+        max-width: 800px;
+        box-sizing: border-box;
+        padding-left: 48px;
+        .movie-primary-info {
+            // height: 55px;
+            font-weight: 300;
+            .movie-title {
+                font-size: 32px;
+                color: #fff;
+                font-weight: 600;
+                // max-width: 50%;
+                // margin-bottom: -4px;
+                // margin-right: 14px;
+                margin-bottom: 3px;
+            }
+            .second-line {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+                text-align: right;
+                .movie-year {
+                    font-size: 18px;
+                    color: #def;
+                    margin-right: 14px;
+                }
+                .directed-by {
+                    color:#9ab;
+                    font-size: 18px;
+                    margin-right: 7px;
+                }
+                a {
+                    text-decoration: none;
+                    color: #def;
+                    font-size: 18px;
+                }
+                a:hover {
+                    color: #40bcf4;
+                }
+            }
+        }
+        .movie-synopsis {
+            padding-top: 24px;
+            color:#9ab;
+            width: 66%;
+            font-weight: 300;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        .useful-links-container {
+            margin-top: 24px;
+            border-bottom: 1px solid #456;
+            padding-bottom: 2px;
+            div {
+                color: #00e054;
+                margin-right: 22px;
+                font-size: 13px;
+                letter-spacing: 1px;
+                padding-bottom: 3px;
+                cursor: pointer;
+                display: inline-block;
+                text-decoration: underline;
+                text-underline-offset: 8px;
+                text-decoration-color: transparent;
+            }
+            div:hover {
+                text-decoration-color: #00e054;
+            }
+            div.active {
+                text-decoration-color: #fff;
+                color: #fff;
+            }
+        }
+        .useful-link-content {
+            margin-top: 11px;
+            width: 100%;
+            color: #eee;
+            padding-bottom: 40px;
+
+            .tag {
+                background-color: #283038;
+                color: #9ab;
+                padding: 3px 6px;
+                border-radius: 3px;
+                margin: 3px 2px;
+                display: inline-block;
+                font-weight: 300;
+                font-size: 12px;
+                text-decoration: none;
+            }
+            .tag:hover {
+                color: #fff;
+            }
+            .crew-content-container {
+                .crew-line {
+                    margin: 5px 0;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    column-gap: 10px;
+                    .crew-role-container {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        width: 200px;
+                        .crew-role {
+                            text-transform: uppercase;
+                            display: inline-block;
+                            background-color: #14181c;
+                            color: #789;
+                            font-weight: 300;
+                            font-size: 14px;
+                            margin-right: 10px;
+                        }
+                        .crew--center {
+                            display: inline-block;
+                            height: 1px;
+                            width: 100%;
+                            border-bottom: 1px solid #456;
+                        }
+                    }
+                    .tag {
+                        font-size: 15px;
+                    }
+                }
+       
+            }
+            .details-container {
+                .detail-line {
+                    margin: 5px 0;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    column-gap: 10px;
+                    .detail-name-container {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        width: 200px;
+                        .detail-name {
+                            text-transform: uppercase;
+                            display: inline-block;
+                            background-color: #14181c;
+                            color: #789;
+                            font-weight: 300;
+                            font-size: 14px;
+                            margin-right: 10px;
+                        }
+                        .detail--center {
+                            display: inline-block;
+                            height: 1px;
+                            width: 100%;
+                            border-bottom: 1px solid #456;
+                        }
+                    }
+                    .detail-value {
+                        font-size: 16px;
+                    }
+                }
+       
+            }
+        }
+    }
+}

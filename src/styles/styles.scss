@@ -1,0 +1,45 @@
+@import './base';
+@import './components/header';
+@import './components/welcome';
+@import './components/movieGroup';
+@import './components/backdrop';
+@import './components/moviePanels';
+@import './components/actorPanels';
+@import './components/actorFilterMovies';
+@import './components/movieSearch';
+@import './components/notFound';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+
+body {
+    background-color: #1e242b;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    // min-height: 1000px;
+}
+
+.page-container {
+    box-sizing: border-box;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.movie-page--body{
+    background-color: #14181c;
+}
+.page-container:after {
+    content:"";
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    //background-image: url("https://i.ibb.co/6HPg30s/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.8;
+}
+
