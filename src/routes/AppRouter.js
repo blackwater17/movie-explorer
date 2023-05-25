@@ -6,7 +6,7 @@ import NotFoundPage from '../pages/NotFoundPage';
 
 function AppRouter() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/movie-explorer">
       <div className='site-container'>
       <Routes>
         <Route path="/" element={<HomePage />} />
