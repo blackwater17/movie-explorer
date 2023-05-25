@@ -7,7 +7,7 @@ import configureStore from './store/configureStore';
 
 const store = configureStore(); // just shows reducer paths
 
-console.log('Running-8');
+console.log('Running-11');
 
 const jsx = (
   <Provider store={store}>

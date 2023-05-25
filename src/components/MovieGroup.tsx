@@ -35,7 +35,7 @@ const MovieGroup = () => {
         <div className='movielist-group'>
             {movies.length > 0 && movies.map((movie, i) => (
                 movie ? ( 
-                <a href={"/movie/"+movie.id} key={i} className='movie-box' style={{backgroundImage: "url(https://www.themoviedb.org/t/p/w342" + movie.poster_path + ")" }}></a>
+                <a href={"#/movie/"+movie.id} key={i} className='movie-box' style={{backgroundImage: "url(https://www.themoviedb.org/t/p/w342" + movie.poster_path + ")" }}></a>
                 ) : (
                     <a key={i} className='movie-box'></a>
                 )  

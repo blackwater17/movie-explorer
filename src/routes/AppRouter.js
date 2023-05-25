@@ -50,13 +50,13 @@ function AppRouter() {
           </div>
         </BrowserRouter>
       ) : (
-        <HashRouter basename="/movie-explorer">
+        <HashRouter>
           <div className='site-container'>
             <Routes>
-              <Route path="/movie/:movieId" element={<MoviePage />} />
               <Route path="/" element={<HomePage />} />
+              <Route path="/movie/:movieId" element={<MoviePage />} />
               <Route path="/actor/:actorId" element={<ActorPage />} />
-              <Route path="*" element={<NotFoundPage />} />
+              <Route path="*" component={<NotFoundPage />} />
             </Routes>
           </div>
         </HashRouter>
