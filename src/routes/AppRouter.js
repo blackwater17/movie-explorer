@@ -34,6 +34,7 @@ import NotFoundPage from '../pages/NotFoundPage';
 
 function AppRouter() {
   const isLocal = process.env.NODE_ENV === 'development';
+  console.log('Local: ' + isLocal);
 
   return (
     <>
@@ -52,8 +53,8 @@ function AppRouter() {
         <HashRouter>
           <div className='site-container'>
             <Routes>
-              <Route path="/" element={<HomePage />} />
               <Route path="/movie/:movieId" element={<MoviePage />} />
+              <Route path="/" element={<HomePage />} />
               <Route path="/actor/:actorId" element={<ActorPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
