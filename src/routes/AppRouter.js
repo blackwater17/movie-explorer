@@ -40,6 +40,7 @@ function AppRouter() {
         <Routes>
           <Route path="/" element={<HomePage />} exact />
           <Route path="/movie/:movieId" element={<MoviePage />} />
+          <Route path="/movie-explorer/movie/:movieId" element={<MoviePage />} />
           <Route path="/actor/:actorId" element={<ActorPage />} />
           <Route path="/error" element={<NotFoundPage />} />
           <Route path="*" element={<NotFoundPage />} />
