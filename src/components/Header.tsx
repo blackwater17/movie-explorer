@@ -10,7 +10,7 @@ function Header() {
 
         <ul>
           <li><a href="/">HOME</a></li>
-          <li><a href="/movie-explorer/movies">MOVIES</a></li>
+          <li><a href="/movies">MOVIES</a></li>
           <li><a href="/actors">ACTORS</a></li>
           <li><a href="/lists">LISTS</a></li>
         </ul>
