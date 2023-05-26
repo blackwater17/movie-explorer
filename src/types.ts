@@ -13,7 +13,8 @@ export type MovieProps = {
     overview: string,
     poster_path: string,
     id: number,
-    title: string
+    title: string,
+    year: number
 }
 
 export type MovieCastProps = {

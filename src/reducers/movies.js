@@ -9,9 +9,6 @@ const moviesReducer = (state = moviesReducerDefaultState, action) => {
             ];
         case "ADD_ALL_MOVIES":
             return action.movies;
-            // return action.movies.map(obj => {
-            //     return {...obj};
-            // })
         default:
             return state;
     }

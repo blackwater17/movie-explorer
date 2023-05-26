@@ -31,7 +31,7 @@ const MovieSearch = () => {
                 <Link className='search-result-container' key={i} to={"/movie/"+movie.id}>
                   <div className='result-texts-container'>
                     <div className='result-name'>{movie.title}</div>
-                      <div className='result-type'>({movie.release_date != undefined && movie.release_date.slice(0, 4)})</div>
+                      <div className='result-type'>({movie.release_date !== undefined && movie.release_date.slice(0, 4)})</div>
                     </div>
                 </Link>  
                 )

@@ -6,6 +6,7 @@ const ActorMovieGroup = () => {
   
   const selectedMovies = useSelector(selectMovies);
 
+  /*
   const isElementVisible = (element: HTMLElement) => {
     const rect = element.getBoundingClientRect();
     const windowHeight =
@@ -31,8 +32,7 @@ const ActorMovieGroup = () => {
       }
     })
   }
-
-  /*
+  
   useEffect(() => {
     if (selectedMovies.length === 0) return
     setObserver() // initial

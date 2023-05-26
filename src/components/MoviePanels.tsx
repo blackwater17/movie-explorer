@@ -36,7 +36,7 @@ function MoviePanels({ movie, movieCast, movieGenres } : { movie: MovieProps | n
             <div className='movie-primary-info'>
                 <div className='movie-title'>{movie && movie.original_title}</div>
                 <div className='second-line'>
-                    <div className='movie-year'>{movie && movie.release_date !== undefined && movie.release_date.slice(0,4)}</div>
+                    <div className='movie-year'>{movie && movie.release_date != undefined && movie.release_date.slice(0,4)}</div>
                     {director && (
                         <>
                           <div className='directed-by'>Directed by</div>
