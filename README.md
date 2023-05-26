@@ -1,4 +1,5 @@
 About project:
+
 Project is hosted on Github pages, you can view it here: https://blackwater17.github.io/movie-explorer/
 Additionally you can download the repo and run the npm start command if you want to run it locally.
 
