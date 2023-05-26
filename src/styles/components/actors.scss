@@ -1,0 +1,31 @@
+.actors-container {
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    width: 80%;
+    margin: 50px auto;
+    row-gap: 30px;
+    column-gap: 10px;
+
+    .actor-box-container {
+        text-decoration: none;
+        .actor-box {
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 165px;
+            aspect-ratio: 0.66;
+            border: 1px solid #292929;
+        }
+    
+        .actor-name {
+            margin-top: 5px;
+            color: #def;
+            text-align: center;
+            font-size: 13px;
+        }
+    }
+
+}

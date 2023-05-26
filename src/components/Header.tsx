@@ -10,7 +10,6 @@ function Header() {
         </div>
         <ul>
           <li><Link to={"/"}>HOME</Link></li>
-          <li><Link to={"/movies"}>MOVIES</Link></li>
           <li><Link to={"/actors"}>ACTORS</Link></li>
           <li><Link to={"/lists"}>LISTS</Link></li>
           <li><Link to={"/login"}>LOGOUT</Link></li>

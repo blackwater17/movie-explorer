@@ -10,13 +10,10 @@ type ActorProps = {
     name: string
 }
 
-//function ActorPanels(actor: ActorProps) {
-  function ActorPanels({ actor }: { actor: ActorProps }) {
+function ActorPanels({ actor }: { actor: ActorProps }) {
 
   const [textLoaded, setTextLoaded] = useState(false);
-
   const stateData = useSelector(state => state);
-  
   const actorMovies = useSelector(selectMovies);
 
   const loadBiography = () => {

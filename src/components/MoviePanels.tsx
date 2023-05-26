@@ -81,9 +81,9 @@ function MoviePanels({ movie, movieCast, movieGenres }: { movie: MovieProps | nu
             <div className='useful-link-content'>
                 {selectedContent === "cast" && 
                     <div className='cast-content-container'>
-                        {movieCast && movieCast.cast !=undefined && movieCast.cast.map(e => {
+                        {movieCast && movieCast.cast !=undefined && movieCast.cast.map((e, i) => {
                             return (
-                                <Link to={"/actor/" + e.id} className='tag' >{e.name}</Link>
+                                <Link to={"/actor/" + e.id} className='tag' key={i}>{e.name}</Link>
                             )
                         })}
                     </div>

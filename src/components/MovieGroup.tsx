@@ -16,7 +16,6 @@ const MovieGroup = () => {
             .then(response => response.json())
             .then(response => {
                 setMovies(response.results.slice(0, 6));
-                console.log(response.results[0]);
             })
             .catch(err => console.error(err));
         };

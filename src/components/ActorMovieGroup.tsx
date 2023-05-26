@@ -49,8 +49,8 @@ const ActorMovieGroup = (movies: ActorMovieGroupProps) => {
   }, [stateData, selectedMovies]); 
 
   useEffect(() => {          
-    // console.log('Another component changed state!');
-    // console.log(stateData); 
+    console.log('Another component changed state!');
+    console.log(stateData); 
   }, [stateData, selectedMovies]);
 
   return (
