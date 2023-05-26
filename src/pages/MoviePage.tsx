@@ -3,29 +3,7 @@ import { useParams } from 'react-router-dom';
 import Header from '../components/Header'
 import Backdrop from '../components/Backdrop'
 import MoviePanels from '../components/MoviePanels'
-
-type MovieProps = {
-  vote_average: number,
-  vote_count: number,
-  original_title: string,
-  release_date: string,
-  overview: string,
-  backdrop_path: string,
-  poster_path: string
-}
-
-type MovieCastProps = {
-  cast: Array<{
-      id: string | number;
-      name: string;
-  }>;
-  crew: Array<{
-      job: string;
-      name: string;
-      id: string | number;
-      department: string;
-    }>;
-}
+import { MovieProps, MovieCastProps } from '../types';
 
 const MoviePage = () => {
   const [movie, setMovie] = useState<null | MovieProps>(null);

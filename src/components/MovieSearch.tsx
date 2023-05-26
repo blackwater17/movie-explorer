@@ -1,16 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
-type MovieProps = {
-  vote_average: number,
-  vote_count: number,
-  original_title: string,
-  release_date: string,
-  overview: string,
-  poster_path: string,
-  id: string | number,
-  title: string
-}
+import { MovieProps } from '../types';
 
 const MovieSearch = () => {
   

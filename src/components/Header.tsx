@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function Header() {
+  
+  const loginInfo = (state: {user: { username: string, logged: boolean }}) => state.user.logged;
+  const isLogged = useSelector(loginInfo);
+  
   return (
     <header>
         <div className='header-logo'>
@@ -10,7 +15,7 @@ function Header() {
           <li><Link to={"/"}>HOME</Link></li>
           <li><Link to={"/actors"}>ACTORS</Link></li>
           <li><Link to={"/lists"}>LISTS</Link></li>
-          <li><Link to={"/login"}>LOGOUT</Link></li>
+          <li><Link to={"/login"}>{isLogged ? "LOGOUT" : "LOGIN"}</Link></li>
         </ul>
     </header>
   );

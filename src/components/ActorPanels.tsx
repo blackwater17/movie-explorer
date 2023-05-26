@@ -1,12 +1,7 @@
 import { useState } from 'react';
 import ActorMovieGroup from './ActorMovieGroup'
 import ActorFilterMovies from './ActorFilterMovies'
-
-type ActorProps = {
-    profile_path: string
-    biography: string
-    name: string
-}
+import { ActorProps } from '../types';
 
 function ActorPanels({ actor }: { actor: ActorProps }) {
 
@@ -33,11 +28,18 @@ function ActorPanels({ actor }: { actor: ActorProps }) {
             <ActorMovieGroup />
         </div>
         <div className='actor-panel actor-panel-2'>
-            <img className='actor-img' src={'https://image.tmdb.org/t/p/h632/' + actor.profile_path} />
+            {actor.profile_path != null &&
+                <img className='actor-img' src={'https://image.tmdb.org/t/p/h632/' + actor.profile_path} />
+            }
+            {actor.profile_path === null &&
+                <img className='actor-img' src={process.env.PUBLIC_URL + '/img/unknown-person.png'} />
+            }
+            {actor.biography &&
             <div className='actor-biography'>
-                <span className="biography-text">{actor.biography!=undefined && actor.biography.slice(0, 200) + "... "}</span> 
+                <span className="biography-text">{actor.biography.slice(0, 200) + "... "}</span> 
                 <span className='load-more' onClick={loadBiography}>{textLoaded ? "(x)" : "more"}</span>
             </div>
+            }
         </div>
     </div>
   );

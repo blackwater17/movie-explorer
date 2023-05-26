@@ -4,12 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { addAllMovies } from '../actions/movies'
 import ActorPanels from '../components/ActorPanels'
-
-type ActorProps = {
-  profile_path: string
-  biography: string
-  name: string
-}
+import { ActorProps } from '../types';
 
 const ActorPage = () => {
 

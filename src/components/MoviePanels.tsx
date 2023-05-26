@@ -1,36 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
-type MovieProps = {
-    vote_average: number,
-    vote_count: number,
-    original_title: string,
-    release_date: string,
-    overview: string,
-    poster_path: string
-}
-
-type MovieCastProps = {
-    cast: Array<{
-        id: string | number;
-        name: string;
-    }>;
-    crew: Array<{
-        job: string;
-        name: string;
-        id: string | number;
-        department: string;
-      }>;
-}
-
-type MovieGenresProps = Array<{
-    name: string
-}>;
+import { MovieProps, MovieCastProps, MovieGenresProps } from '../types';
 
 function MoviePanels({ movie, movieCast, movieGenres } : { movie: MovieProps | null; movieCast: MovieCastProps | null; movieGenres: MovieGenresProps }) {
+  
   const [selectedContent, setSelectedContent] = useState<string | number>("cast");
-  const [importantInfo, setImportantInfo] = useState(["genre_ids", "original_language", "original_title", "release_date", "vote_average", "vote_count"]);
-
+  const importantInfo = ["genre_ids", "original_language", "original_title", "release_date", "vote_average", "vote_count"]
+  
   const setActive = (id: number | string) => {
     document.querySelectorAll(".useful-links-container div").forEach(d => {
         d.id === id ? d.className += " active" : d.classList.remove('active');

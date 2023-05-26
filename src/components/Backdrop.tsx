@@ -1,6 +1,4 @@
-type MovieProps = {
-  backdrop_path: String
-}
+import { MovieProps } from '../types';
 
 function Backdrop({ movie }: { movie: MovieProps | null }) {
   if (!movie) {

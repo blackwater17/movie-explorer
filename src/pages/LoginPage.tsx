@@ -12,6 +12,10 @@ const LoginPage: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+    if (username.length < 4 || password.length < 4) {
+      alert("Password and username must be at least 4 characters long.")
+      return false
+    }
     dispatch(setUser(username, true));
     navigate('/'); 
   };

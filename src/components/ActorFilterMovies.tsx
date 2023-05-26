@@ -7,6 +7,10 @@ const ActorFilterMovies = () => {
   const dispatch = useDispatch();
   
   useEffect(() => {
+    
+    dispatch(setYear(""));  
+    dispatch(setOrder("")); // resetting to default filters when page loads
+    
     document.querySelectorAll(".select-container").forEach(s => {
         if (!s) return false
         s.querySelectorAll("ul.select li").forEach(li => {

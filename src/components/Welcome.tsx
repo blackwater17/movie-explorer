@@ -5,7 +5,8 @@ const Welcome = () => {
   const username = useSelector(getUsername);
   return (
     <div className='welcome-msg'> 
-        <p>Welcome back{username && <span> {username}</span>}. Hope you enjoy the site.</p>
+        <p>Welcome back 
+          {username ? <span className="member"> {username}.</span> : <span> Guest.</span>} Hope you enjoy the site.</p>
     </div>
   );
 };
