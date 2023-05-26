@@ -14,7 +14,7 @@ const ActorPage = () => {
 
   useEffect(() => {
 
-    let apiKey = localStorage.getItem("tmdb_api_key")
+    let apiKey = process.env.REACT_APP_TMDB_API_KEY
 
     const fetchActor = async() => {
       fetch(`https://api.themoviedb.org/3/person/${actorId}?api_key=${apiKey}`)

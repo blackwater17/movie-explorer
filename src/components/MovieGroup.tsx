@@ -7,7 +7,7 @@ const MovieGroup = () => {
 
     useEffect(() => {
     
-        let apiKey = localStorage.getItem("tmdb_api_key")
+        let apiKey = process.env.REACT_APP_TMDB_API_KEY
         const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`;
 
         const fetchMovies = async () => {

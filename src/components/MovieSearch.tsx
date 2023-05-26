@@ -7,7 +7,7 @@ const MovieSearch = () => {
   const [searchResults, setSearchResults] = useState([]);
 
   const handler = () => {
-    const apiKey = localStorage.getItem("tmdb_api_key")
+    const apiKey = process.env.REACT_APP_TMDB_API_KEY
     const keyword = (document.getElementById("movie-search")! as HTMLInputElement).value;
     if (keyword.length < 3) return
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${keyword}`)

@@ -9,7 +9,7 @@ const ActorsPage = () => {
 
   useEffect(() => {
 
-    let apiKey = localStorage.getItem("tmdb_api_key")
+    let apiKey = process.env.REACT_APP_TMDB_API_KEY
 
     const fetchActors = async() => {
 
