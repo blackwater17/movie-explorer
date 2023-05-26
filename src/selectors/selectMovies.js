@@ -42,4 +42,4 @@ const selectMovies = (state) => {
     return results;
 };
   
-  export default selectMovies;
+export default selectMovies;
