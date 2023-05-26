@@ -5,9 +5,7 @@ import './styles/styles.scss';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 
-const store = configureStore(); // just shows reducer paths
-
-console.log('Running-14');
+const store = configureStore();
 
 const jsx = (
   <Provider store={store}>
