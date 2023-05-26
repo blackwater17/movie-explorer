@@ -19,7 +19,6 @@ body {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-
 .page-container {
     box-sizing: border-box;
     min-height: 100vh;
@@ -36,11 +35,6 @@ body {
     height: 100vh;
     top: 0;
     left: 0;
-    //background-image: url("https://i.ibb.co/6HPg30s/bg.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     z-index: -1;
     opacity: 0.8;
 }
-

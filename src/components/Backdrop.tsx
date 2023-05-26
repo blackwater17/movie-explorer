@@ -7,7 +7,7 @@ function Backdrop({ movie }: { movie: MovieProps | null }) {
     return null;
   }
   return (
-    <div className='backdrop-container' style={{backgroundImage: "url(https://www.themoviedb.org/t/p/w1280" + movie.backdrop_path + ")" }}> </div>
+    <div className='backdrop-container' style={{ backgroundImage: "url(https://www.themoviedb.org/t/p/w1280" + movie.backdrop_path + ")" }}> </div>
   );
 }
 

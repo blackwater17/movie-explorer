@@ -1,6 +1,6 @@
 import Header from '../components/Header'
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { addAllMovies } from '../actions/movies'
 import ActorPanels from '../components/ActorPanels'
@@ -16,7 +16,6 @@ const ActorPage = () => {
   const dispatch = useDispatch();
   const [actor, setActor] = useState<ActorProps | null>(null);
   const { actorId } = useParams();
-  // const [actorMovies, setActorMovies] = useState([]);
 
   useEffect(() => {
 
@@ -25,9 +24,8 @@ const ActorPage = () => {
     const fetchActor = async() => {
       fetch(`https://api.themoviedb.org/3/person/${actorId}?api_key=${apiKey}`)
       .then(response => response.json())
-      .then(data => {
-        const artist = data;
-        setActor(artist)
+      .then(actorData => {
+        setActor(actorData)
       })
       .catch(error => {
         console.error('Error:', error);
@@ -39,7 +37,6 @@ const ActorPage = () => {
         .then(response => response.json())
         .then(data => {
           const movies = data.cast;
-          // setActorMovies(movies)
           dispatch(addAllMovies(movies));
         })
         .catch(error => {
@@ -52,11 +49,10 @@ const ActorPage = () => {
   
   }, []); 
   
-  
   return (
     <div className='page-container page-container--actor-page'>
         <Header />
-        {actor && <ActorPanels actor={actor} />}
+        { actor && <ActorPanels actor={actor} />}
     </div>
   );
 };

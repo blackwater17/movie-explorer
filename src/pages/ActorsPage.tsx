@@ -1,22 +1,16 @@
 import Header from '../components/Header'
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { addAllMovies } from '../actions/movies'
-import ActorPanels from '../components/ActorPanels'
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 type ActorsProps = Array<{
     profile_path: string
     name: string
     id: number
-  }>
+}>
   
-
 const ActorsPage = () => {
 
   const [actors, setActors] = useState<ActorsProps | null>(null);
-
 
   useEffect(() => {
 
@@ -27,21 +21,17 @@ const ActorsPage = () => {
         fetch(`https://api.themoviedb.org/3/person/popular?api_key=${apiKey}`)
           .then(response => response.json())
           .then(data => {
-            // Process the list of popular actors here
-            console.log(data.results);
-            setActors(data.results)
+            const actors = data.results
+            setActors(actors)
           })
           .catch(error => {
-            // Handle any errors
             console.error(error);
           });
     }
 
     fetchActors()
 
-  
   }, []); 
-  
   
   return (
     <div className='page-container page-container--actors-page'>
@@ -56,7 +46,6 @@ const ActorsPage = () => {
             )
             })}
         </div>
-
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../components/Header'
 import Backdrop from '../components/Backdrop'
@@ -52,7 +52,7 @@ const MoviePage = () => {
       fetch(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}`)
         .then(response => response.json())
         .then(data => {
-          setMovieCast(data) // cast & crew
+          setMovieCast(data) // {cast, crew}
         })
         .catch(error => {
           console.error(error);
@@ -63,7 +63,6 @@ const MoviePage = () => {
       fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=genres`)
       .then(response => response.json())
       .then(data => {
-        const genres = data.genres;
         setMovieGenres(data.genres)
       })
       .catch(error => {

@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import BASE_URL from '../config/config';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 type MovieProps = {
@@ -37,7 +36,7 @@ const MovieSearch = () => {
         <input id="movie-search" type="text" placeholder='Search movie' autoFocus onInput={handler}></input>
         {searchResults.length > 0 &&
         <div className="search-results" >
-            {searchResults.map((movie:MovieProps, i) => {
+            {searchResults.map((movie: MovieProps, i) => {
               return (
                 <Link className='search-result-container' key={i} to={"/movie/"+movie.id}>
                   <div className='result-texts-container'>

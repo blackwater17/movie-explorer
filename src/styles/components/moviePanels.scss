@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: row;
     margin: 0 auto;
-    margin-top: 242px; /*270*/
+    margin-top: 242px;
 
     .movie-panel {
         min-height: 500px;
@@ -49,15 +49,11 @@
         box-sizing: border-box;
         padding-left: 48px;
         .movie-primary-info {
-            // height: 55px;
             font-weight: 300;
             .movie-title {
                 font-size: 32px;
                 color: #fff;
                 font-weight: 600;
-                // max-width: 50%;
-                // margin-bottom: -4px;
-                // margin-right: 14px;
                 margin-bottom: 3px;
             }
             .second-line {
@@ -169,7 +165,6 @@
                         font-size: 15px;
                     }
                 }
-       
             }
             .details-container {
                 .detail-line {

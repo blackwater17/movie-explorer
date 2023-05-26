@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import BASE_URL from '../config/config';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const MovieGroup = () => {
@@ -11,7 +10,7 @@ const MovieGroup = () => {
         let apiKey = localStorage.getItem("tmdb_api_key")
         const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`;
 
-        const fetchData = async () => {
+        const fetchMovies = async () => {
             fetch(apiUrl)
             .then(response => response.json())
             .then(response => {
@@ -20,14 +19,10 @@ const MovieGroup = () => {
             .catch(err => console.error(err));
         };
     
-        fetchData()
+        fetchMovies()
         
-        return () => {
-          // Perform any cleanup or unsubscribe from subscriptions here
-        };
-      }, []); // Empty dependency array means the effect runs only once (similar to componentDidMount)
+      }, []);
       
-
   return (
     <div className='movie-group-container'> 
         <div className='group-title-container'>
@@ -38,7 +33,7 @@ const MovieGroup = () => {
                 movie ? ( 
                     <Link to={"/movie/"+movie.id} key={i} className='movie-box' style={{ backgroundImage:  "url(https://www.themoviedb.org/t/p/w342" + movie.poster_path + ")" }} />
                 ) : (
-                    <Link to="" key={i} className='movie-box' />
+                    <div key={i} className='movie-box'> </div>
                 )  
             ))}
         </div>

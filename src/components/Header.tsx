@@ -1,5 +1,3 @@
-import React from 'react';
-import BASE_URL from '../config/config';
 import { Link } from 'react-router-dom';
 
 function Header() {

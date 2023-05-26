@@ -1,18 +1,12 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { setYear, setOrder } from '../actions/filters'
 
-type ActorFilterMoviesProps = {
-  movies: []
-}
+const ActorFilterMovies = () => {
 
-const ActorFilterMovies = (movies: ActorFilterMoviesProps) => {
-
-  const stateData = useSelector(state => state);
   const dispatch = useDispatch();
   
   useEffect(() => {
-    // if (movies.length === 0) return
     document.querySelectorAll(".select-container").forEach(s => {
         if (!s) return false
         s.querySelectorAll("ul.select li").forEach(li => {
@@ -20,19 +14,16 @@ const ActorFilterMovies = (movies: ActorFilterMoviesProps) => {
               const spanElement = s.querySelector("span");
               const selectElement = s.querySelector(".select")
               const ulElement = s.querySelector("ul.select");
-
+              
               if (spanElement === null) return false;
                 (spanElement as HTMLElement).textContent = li.textContent;
-                //  s.querySelector("span").textContent = li.textContent
                 (selectElement as HTMLElement).style.display = "none"
-                // s.querySelector(".select").style.display = "none"
-
                 let id: string | undefined;
+                
                 if (ulElement !== null) {
                   id = ulElement.id;
-                } //}
-                // let id = s.querySelector("ul.select").id
-
+                } 
+                
                 if (li.id === undefined) return // clicked label
                 if (id === "select-year" && li.id !== null && li.id !== undefined) {
                     dispatch(setYear(li.id));
@@ -44,15 +35,10 @@ const ActorFilterMovies = (movies: ActorFilterMoviesProps) => {
     })
   }, [dispatch]); 
  
-  useEffect(() => {          
-    // console.log(stateData); 
-  }, [stateData]);
-
-  const showOptions = (id:string) => {
+  const showOptions = (id: string) => {
     document.querySelectorAll("ul.select").forEach((d: Element)=>{
       (d as HTMLElement).style.display="none"
     })
-
     const element = document.getElementById(id);
     if (element === null) return false
       element.style.display="block"

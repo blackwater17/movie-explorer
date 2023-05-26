@@ -1,10 +1,7 @@
-import React from 'react';
-import BASE_URL from '../config/config';
-import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const Welcome = () => {
-  const getUsername = (state: {user: {username: string, logged:boolean}}) => state.user.username;
+  const getUsername = (state: {user: { username: string, logged: boolean }}) => state.user.username;
   const username = useSelector(getUsername);
   return (
     <div className='welcome-msg'> 

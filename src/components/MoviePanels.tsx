@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import BASE_URL from '../config/config';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 type MovieProps = {
@@ -27,9 +26,8 @@ type MovieCastProps = {
 type MovieGenresProps = Array<{
     name: string
 }>;
-  
 
-function MoviePanels({ movie, movieCast, movieGenres }: { movie: MovieProps | null; movieCast:MovieCastProps|null; movieGenres: MovieGenresProps }) {
+function MoviePanels({ movie, movieCast, movieGenres } : { movie: MovieProps | null; movieCast: MovieCastProps | null; movieGenres: MovieGenresProps }) {
   const [selectedContent, setSelectedContent] = useState<string | number>("cast");
   const [importantInfo, setImportantInfo] = useState(["genre_ids", "original_language", "original_title", "release_date", "vote_average", "vote_count"]);
 
@@ -65,8 +63,8 @@ function MoviePanels({ movie, movieCast, movieGenres }: { movie: MovieProps | nu
                     <div className='movie-year'>{movie && movie.release_date !== undefined && movie.release_date.slice(0,4)}</div>
                     {director && (
                         <>
-                        <div className='directed-by'>Directed by</div>
-                        <Link to={"/actor/"+director.id}>{director.name}</Link>
+                          <div className='directed-by'>Directed by</div>
+                          <Link to={"/actor/"+director.id}>{director.name}</Link>
                         </>
                     )}      
                 </div>
@@ -113,7 +111,7 @@ function MoviePanels({ movie, movieCast, movieGenres }: { movie: MovieProps | nu
                                         <div className='detail-name'>{prop}</div> 
                                         <div className='detail--center'> </div>
                                     </div>
-                                    <div className="detail-value">{value!=null&&value.toString()}</div>
+                                    <div className="detail-value">{value != null && value.toString()}</div>
                                 </div>
                             )
                         })

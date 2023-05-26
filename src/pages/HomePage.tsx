@@ -1,10 +1,8 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import Header from '../components/Header'
 import Welcome from '../components/Welcome'
 import MovieSearch from '../components/MovieSearch'
-import { connect } from 'react-redux';
 import MovieGroup from '../components/MovieGroup';
-
 
 class HomePage extends Component {
   render() {

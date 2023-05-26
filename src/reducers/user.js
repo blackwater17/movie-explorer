@@ -6,10 +6,10 @@ const userReducer = (state = userReducerDefaultState, action) => {
             return {
                 username: action.username,
                 logged: action.username
-            }
+            };
         default:
             return state;
-    }
-}
+    };
+};
 
 export default userReducer;

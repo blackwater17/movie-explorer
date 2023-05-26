@@ -22,7 +22,7 @@ function AppRouter() {
       </div>
     </HashRouter>
   );
-
+  
 }
 
 export default AppRouter;
