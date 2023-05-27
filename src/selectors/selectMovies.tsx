@@ -17,7 +17,7 @@ const selectMovies = (state: RootState) => {
       results = results.filter((movie: MovieProps) => {
         let year = parseInt(movie.release_date.slice(0, 4))
         let val = startYear <= year && endYear >= year  
-        return val
+        return val;
       });
     }
 
